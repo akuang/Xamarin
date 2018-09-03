@@ -6,6 +6,8 @@ namespace Phoneword
 {
     public class MainPage : ContentPage
     {
+        string phoneNum = string.Empty;
+
         public MainPage()
         {
             Entry phoneNumberText = new Entry {
@@ -23,7 +25,7 @@ namespace Phoneword
 
             Button callButton = new Button {
                 Text = "Call",
-                IsEnabled = true
+                IsEnabled = false
             };
 
             StackLayout layout = new StackLayout
@@ -48,7 +50,7 @@ namespace Phoneword
             this.Content = layout;
 
             translateButton.Clicked += (s, e) => {
-                string phoneNum = PhonewordTranslator.ToNumber(phoneNumberText.Text);
+                phoneNum = PhonewordTranslator.ToNumber(phoneNumberText.Text);
 
                 if (!string.IsNullOrEmpty(phoneNum))
                 {
@@ -67,6 +69,20 @@ namespace Phoneword
                     callButton.Text = "Call";
                 }
             };
+
+            callButton.Clicked += OnCall;
+        }
+
+        async void OnCall(object sender, EventArgs e)
+        {
+            bool result = await this.DisplayAlert(title: "Dial a Number", 
+                                                  message: $"Would you like to call {phoneNum}", 
+                                                  accept: "Yes", 
+                                                  cancel: "No");
+            if (result)
+            {
+                // TODO: dial the phone
+            }
         }
     }
 }
