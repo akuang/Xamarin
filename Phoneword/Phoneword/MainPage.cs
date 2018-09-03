@@ -49,7 +49,23 @@ namespace Phoneword
 
             translateButton.Clicked += (s, e) => {
                 string phoneNum = PhonewordTranslator.ToNumber(phoneNumberText.Text);
-                translatedNumber.Text = phoneNum ?? "Invalid phone number!";
+
+                if (!string.IsNullOrEmpty(phoneNum))
+                {
+                    translatedNumber.TextColor = Color.Green;
+                    translatedNumber.Text = phoneNum;
+
+                    callButton.IsEnabled = true;
+                    callButton.Text = $"Call: {phoneNum}";
+                }
+                else
+                {
+                    translatedNumber.TextColor = Color.Red;
+                    translatedNumber.Text = "Invalid phone number!";
+
+                    callButton.IsEnabled = false;
+                    callButton.Text = "Call";
+                }
             };
         }
     }
