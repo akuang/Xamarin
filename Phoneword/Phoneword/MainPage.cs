@@ -7,18 +7,38 @@ namespace Phoneword
     {
         public MainPage()
         {
+            Entry phoneNumberText = new Entry {
+                Text = "1-855-Xamarin"
+            };
+
+            Button translateButton = new Button {
+                Text = "Translate"
+            };
+
+            Button callButton = new Button {
+                Text = "Call",
+                IsEnabled = true
+            };
+
             StackLayout layout = new StackLayout
             {
-                VerticalOptions = LayoutOptions.Center,
+                Padding = 20,
+                Spacing = 20,
                 Children = {
                     new Label {
+                        // set the margin top
+                        Margin = new Thickness(left:0, top:100, right:0, bottom:0),
                         HorizontalTextAlignment = TextAlignment.Center,
-                        Text = "Welcome to Xamarin.Forms!"
+                        Text = "Enter a Phoneword:"
                     }
                 }
             };
 
-            Content = layout;
+            layout.Children.Add(phoneNumberText);
+            layout.Children.Add(translateButton);
+            layout.Children.Add(callButton);
+
+            this.Content = layout;
         }
     }
 }
