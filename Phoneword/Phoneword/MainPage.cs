@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 using Xamarin.Forms;
 
 namespace Phoneword
@@ -13,6 +14,11 @@ namespace Phoneword
 
             Button translateButton = new Button {
                 Text = "Translate"
+            };
+
+            Label translatedNumber = new Label
+            {
+                Text = string.Empty
             };
 
             Button callButton = new Button {
@@ -35,10 +41,16 @@ namespace Phoneword
             };
 
             layout.Children.Add(phoneNumberText);
+            layout.Children.Add(translatedNumber);
             layout.Children.Add(translateButton);
             layout.Children.Add(callButton);
 
             this.Content = layout;
+
+            translateButton.Clicked += (s, e) => {
+                string phoneNum = PhonewordTranslator.ToNumber(phoneNumberText.Text);
+                translatedNumber.Text = phoneNum ?? "Invalid phone number!";
+            };
         }
     }
 }
