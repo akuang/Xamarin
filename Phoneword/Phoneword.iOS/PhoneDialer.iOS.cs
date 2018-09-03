@@ -3,6 +3,9 @@ using Foundation;
 using UIKit;
 using Xamarin.Forms;
 
+// This same attribute definition needs to go in each platform-specific file
+[assembly: Dependency(typeof(Phoneword.iOS.PhoneDialer))]
+
 namespace Phoneword.iOS
 {
 	public class PhoneDialer : IDialer

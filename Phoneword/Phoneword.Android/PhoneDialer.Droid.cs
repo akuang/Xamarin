@@ -7,6 +7,9 @@ using Uri = Android.Net.Uri;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 
+// This same attribute definition needs to go in each platform-specific file
+[assembly: Dependency(typeof(Phoneword.Droid.PhoneDialer))]
+
 namespace Phoneword.Droid
 {
     public class PhoneDialer : IDialer
