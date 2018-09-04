@@ -1,4 +1,5 @@
 ﻿using System;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,14 @@ namespace NetStatus
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                MainPage = new NetworkViewPage();
+            }
+            else
+            {
+                MainPage = new NoNetworkPage();
+            }
         }
 
         protected override void OnStart()
