@@ -82,6 +82,12 @@ namespace Phoneword
             if (result)
             {
                 // TODO: dial the phone
+                IDialer dialer = DependencyService.Get<IDialer>();
+
+                if (dialer != null)
+                {
+                    await dialer.DialAsync(phoneNum);
+                }
             }
         }
     }
