@@ -25,6 +25,17 @@ namespace NetStatus
         protected override void OnStart()
         {
             // Handle when your app starts
+            CrossConnectivity.Current.ConnectivityChanged += (s, e) =>
+            {
+                if (e.IsConnected)
+                {
+                    this.MainPage = new NetworkViewPage();
+                }
+                else
+                {
+                    MainPage = new NoNetworkPage();
+                }
+            };
         }
 
         protected override void OnSleep()

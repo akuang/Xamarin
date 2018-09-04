@@ -1,16 +1,20 @@
 ﻿using System;
-
+using System.Linq;
+using Plugin.Connectivity;
 using Xamarin.Forms;
+
 
 namespace NetStatus
 {
     public class NetworkViewPage : ContentPage
     {
+        Label ConnectionDetails = null;
+
         public NetworkViewPage()
         {
-            Content = new Label()
+            ConnectionDetails = new Label()
             {
-                Text = "Network Connection Available",
+                Text = "Network Connection Available: ",
                 TextColor = Color.FromRgb(0x40, 0x40, 0x40),
 
                 HorizontalOptions = LayoutOptions.Center,
@@ -18,6 +22,14 @@ namespace NetStatus
 
                 ClassId = "ConnectionDetails"
             };
+
+            this.Content = ConnectionDetails;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ConnectionDetails.Text += CrossConnectivity.Current.ConnectionTypes.First().ToString();
         }
     }
 }
