@@ -46,7 +46,7 @@ namespace NetStatus
 
             if (CrossConnectivity.Current != null)
             {
-               //CrossConnectivity.Current.ConnectivityChanged -= UpdateNetworkInfo;
+                CrossConnectivity.Current.ConnectivityChanged -= UpdateNetworkInfo;
             }
         }
 
