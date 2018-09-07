@@ -9,7 +9,7 @@ namespace BookClient.Data
 {
     public class BookManager
     {
-        const string Url = "http://xam150.azurewebsites.net/api/books";
+        const string Url = "https://xam150.azurewebsites.net/api/books";
         private string authorizationKey = string.Empty;
 
         public async Task<IEnumerable<Book>> GetAll()
