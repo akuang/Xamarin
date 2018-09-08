@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Class="Calculator.MainPageForm"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:my="clr-namespace:Calculator"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Padding>
+        <!--
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,40,0,0"/>
+        -->
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS">0,40,0,0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <Grid Padding="5,5,5,5" RowSpacing="5" ColumnSpacing="5" BackgroundColor="Gray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold"
+                   FontSize="48" BackgroundColor="Black" Text="0"
+                   TextColor="White" HorizontalTextAlignment="End" 
+                   VerticalTextAlignment="Center" LineBreakMode="NoWrap"
+                   Grid.ColumnSpan="4" x:Name="resultText"/>
+            
+            <Button Text="7" Grid.Row="1" Grid.Column="0" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+            <Button Text="8" Grid.Row="1" Grid.Column="1" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+            <Button Text="9" Grid.Row="1" Grid.Column="2" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+
+            <Button Text="4" Grid.Row="2" Grid.Column="0" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+            <Button Text="5" Grid.Row="2" Grid.Column="1" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+            <Button Text="6" Grid.Row="2" Grid.Column="2" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+
+            <Button Text="1" Grid.Row="3" Grid.Column="0" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+            <Button Text="2" Grid.Row="3" Grid.Column="1" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+            <Button Text="3" Grid.Row="3" Grid.Column="2" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectNumber"/>
+            
+            <Button Text="0" Grid.Row="4" Grid.Column="0" BackgroundColor="White" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Grid.ColumnSpan="3" Clicked="OnSelectNumber"/>
+
+            
+            <Button Text="/" Grid.Row="1" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
+            <Button Text="x" Grid.Row="2" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
+            <Button Text="-" Grid.Row="3" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
+            <Button Text="+" Grid.Row="4" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
+                    
+            <Button Text="C" Grid.Row="5" Grid.Column="0" BackgroundColor="#808080" 
+                    TextColor="White" FontSize="36" CornerRadius="5" Clicked="OnClear"/>
+            <Button Text="=" Grid.Row="5" Grid.Column="1" BackgroundColor="{x:Static my:XamlResources.Orange}" 
+                    TextColor="Blue" FontSize="36" CornerRadius="5" Grid.ColumnSpan="3" Clicked="OnCalculate"/>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
