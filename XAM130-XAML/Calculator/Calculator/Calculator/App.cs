@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+// Turn on the XAML compiler XAMLC to compile the XAML pages
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace Calculator
 {
