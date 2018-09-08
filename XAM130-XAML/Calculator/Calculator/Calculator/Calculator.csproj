@@ -43,6 +43,7 @@
     <Compile Include="MainPageForm.xaml.cs">
       <DependentUpon>MainPageForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="XamlResources.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

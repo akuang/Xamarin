@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage x:Class="Calculator.MainPageForm"
     xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:my="clr-namespace:Calculator"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <Grid Padding="5,5,5,5" RowSpacing="5" ColumnSpacing="5" BackgroundColor="Gray">
@@ -51,18 +52,18 @@
                     TextColor="Blue" FontSize="36" CornerRadius="5" Grid.ColumnSpan="3" Clicked="OnSelectNumber"/>
 
             
-            <Button Text="/" Grid.Row="1" Grid.Column="3" BackgroundColor="#FFA500" 
+            <Button Text="/" Grid.Row="1" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
                     TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
-            <Button Text="x" Grid.Row="2" Grid.Column="3" BackgroundColor="#FFA500" 
+            <Button Text="x" Grid.Row="2" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
                     TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
-            <Button Text="-" Grid.Row="3" Grid.Column="3" BackgroundColor="#FFA500" 
+            <Button Text="-" Grid.Row="3" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
                     TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
-            <Button Text="+" Grid.Row="4" Grid.Column="3" BackgroundColor="#FFA500" 
+            <Button Text="+" Grid.Row="4" Grid.Column="3" BackgroundColor="{x:Static my:XamlResources.Orange}" 
                     TextColor="Blue" FontSize="36" CornerRadius="5" Clicked="OnSelectOperator"/>
                     
             <Button Text="C" Grid.Row="5" Grid.Column="0" BackgroundColor="#808080" 
                     TextColor="White" FontSize="36" CornerRadius="5" Clicked="OnClear"/>
-            <Button Text="=" Grid.Row="5" Grid.Column="1" BackgroundColor="#FFA500" 
+            <Button Text="=" Grid.Row="5" Grid.Column="1" BackgroundColor="{x:Static my:XamlResources.Orange}" 
                     TextColor="Blue" FontSize="36" CornerRadius="5" Grid.ColumnSpan="3" Clicked="OnCalculate"/>
             
         </Grid>
