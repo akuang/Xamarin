@@ -32,7 +32,10 @@
         <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
             <Label Text="Tip Percentage" />
             <Label x:Name="tipPercent" Text="15%" />
-            <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15" />
+        </StackLayout>
+      
+        <StackLayout Orientation="Horizontal">
+            <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15" HorizontalOptions="FillAndExpand" />
         </StackLayout>
         
         <StackLayout Orientation="Horizontal">    
