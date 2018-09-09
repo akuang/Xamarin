@@ -19,6 +19,11 @@ namespace TipCalculator
 				tipPercent.Text = pct + "%";
 				CalculateTip(false, false);
 			};
+
+            nextPage.Clicked += async (s, e) =>
+            {
+                await Navigation.PushAsync(new GridLayout());
+            };
 		}
 
 		void CalculateTip(bool roundUp, bool roundDown)
