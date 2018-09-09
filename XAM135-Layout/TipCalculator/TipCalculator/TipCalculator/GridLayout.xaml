@@ -5,40 +5,69 @@
              x:Class="TipCalculator.GridLayout"
              Padding="40">
 
-    <StackLayout>
+    <Grid ColumnSpacing="1" RowSpacing="1">
+    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
         <Label x:Name="lableBill"
+               Grid.Row="0" Grid.Column="0" VerticalOptions="Center"
                Text="Bill" />
         <Entry x:Name="billInput" 
+               Grid.Row="0" Grid.Column="1"
                Placeholder="Enter Amount" Keyboard="Numeric" />
     
         <Label x:Name="lableTip"
+               Grid.Row="1" Grid.Column="0"
                Text="Tip" />
         <Label x:Name="tipOutput" 
+               Grid.Row="1" Grid.Column="1"
                Text="0.00" />
     
         <Label x:Name="lableTotal"
+               Grid.Row="2" Grid.Column="0"
                Text="Total" />
         <Label x:Name="totalOutput" 
+               Grid.Row="2" Grid.Column="1"
                Text="0.00" />
     
         <Label x:Name="lableTipPercent"
+               Grid.Row="3" Grid.Column="0" VerticalOptions="End" HorizontalOptions="Start"
                Text="Tip Percentage" />
         <Label x:Name="tipPercent" 
+               Grid.Row="3" Grid.Column="1" VerticalOptions="End" HorizontalOptions="End"
                Text="15%" />
+        
         <Slider x:Name="tipPercentSlider" 
+                Grid.Row="4" Grid.ColumnSpan="2"
                 Minimum="0" Maximum="100" Value="15" />
     
         <Button Text="15%" 
+                Grid.Row="5" Grid.Column="0"
                 Clicked="OnNormalTip" />
         <Button Text="20%" 
+                Grid.Row="5" Grid.Column="1"
                 Clicked="OnGenerousTip" />
     
         <Button x:Name="roundDown" 
+                Grid.Row="6" Grid.Column="0"
                 Text="Round Down" />
         <Button x:Name="roundUp"   
+                Grid.Row="6" Grid.Column="1"
                 Text="Round Up" />
         
-    </StackLayout>
+    </Grid>
 
 </ContentPage>
