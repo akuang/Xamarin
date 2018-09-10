@@ -12,6 +12,19 @@ namespace People
         public MainPage()
         {
             InitializeComponent();
+
+        }
+
+        public string Text
+        {
+            get
+            {
+                return textLabel.Text;
+            }
+            set
+            {
+                textLabel.Text = value;
+            }
         }
     }
 }
