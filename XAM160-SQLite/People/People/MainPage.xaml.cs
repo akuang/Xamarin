@@ -13,6 +13,11 @@ namespace People
         {
             InitializeComponent();
 
+            nextPage.Clicked += async (s, e) =>
+            {
+                await Navigation.PushAsync(new NextPage());
+            };
+
         }
 
         public string Text

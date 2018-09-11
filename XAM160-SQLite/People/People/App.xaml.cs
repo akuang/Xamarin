@@ -7,14 +7,19 @@ namespace People
 {
     public partial class App : Application
     {
+        public static PersonRepository PersonRepo { get; private set; }
+
         public App(string displayText)
         {
             InitializeComponent();
 
-            MainPage = new MainPage()
+
+            PersonRepo = new PersonRepository(displayText);
+
+            MainPage = new NavigationPage(new MainPage() 
             {
                 Text = displayText
-            };
+            });
         }
 
         protected override void OnStart()
