@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="People.NextPage"
@@ -36,8 +36,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Height="30">
-                        <StackLayout Padding="5">
-                            <Label Text="{Binding Name}" />
+                        <StackLayout Orientation="Horizontal" Padding="20,20,20,10">
+                            <Label Text="{Binding Id}"/>
+                            <Label Text="{Binding Name}" HorizontalOptions="CenterAndExpand"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
